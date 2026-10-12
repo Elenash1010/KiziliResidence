@@ -8,6 +8,29 @@ const revealElements = document.querySelectorAll(".reveal");
 const navigationLinks = document.querySelectorAll(".site-nav__link");
 const observedSections = document.querySelectorAll("main > section[id]");
 
+const screenHeadings = document.querySelectorAll("main .screen h1[id], main .screen h2[id]");
+
+function fitScreenHeadings() {
+  screenHeadings.forEach((heading) => {
+    heading.style.fontSize = "72px";
+    const availableWidth = heading.clientWidth;
+    const textWidth = heading.scrollWidth;
+
+    if (availableWidth > 0 && textWidth > availableWidth) {
+      heading.style.fontSize = `${Math.floor((72 * availableWidth / textWidth) * 10) / 10}px`;
+    }
+  });
+}
+
+fitScreenHeadings();
+document.fonts?.ready.then(fitScreenHeadings);
+window.addEventListener("resize", fitScreenHeadings);
+
+if ("ResizeObserver" in window) {
+  const headingWidthObserver = new ResizeObserver(fitScreenHeadings);
+  screenHeadings.forEach((heading) => headingWidthObserver.observe(heading.parentElement));
+}
+
 function closeMenu() {
   menuToggle?.setAttribute("aria-expanded", "false");
   menuToggle?.setAttribute("aria-label", "Открыть меню");

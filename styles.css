@@ -3426,6 +3426,7 @@ body {
 }
 
 .site-footer .footer-info { display: grid; gap: 12px; }
+.site-footer .footer-programs { white-space: nowrap; }
 .site-footer .footer-info p { max-width: 36ch; font-size: 16px; line-height: 1.5; }
 .site-footer .footer-inline-link { width: fit-content; font-weight: 700; font-size: 14px; line-height: 1.35; }
 .site-footer .footer-date { color: rgb(11 15 20 / 64%); font-size: 13px !important; }
@@ -3564,6 +3565,19 @@ body {
   .site-header .brand__name { font-size: 10px; }
   .site-header .brand__divider { display: none; }
   .header-contacts__vk svg { width: 22px; height: 18px; }
+}
+
+main .screen h1[id],
+main .screen h2[id] {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  color: var(--red);
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 @media (prefers-reduced-motion: reduce) {
