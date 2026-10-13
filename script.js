@@ -10,6 +10,25 @@ const observedSections = document.querySelectorAll("main > section[id]");
 
 const screenHeadings = document.querySelectorAll("main .screen h1[id], main .screen h2[id]");
 
+function centerHeroTitle() {
+  const art = document.querySelector(".hero__art");
+  const title = document.querySelector(".hero__title-art");
+  const buttons = [...document.querySelectorAll(".hero__actions .button")];
+  if (!art || !title || !buttons.length) return;
+  const bounds = buttons.map(button => button.getBoundingClientRect());
+  const left = Math.min(...bounds.map(rect => rect.left));
+  const right = Math.max(...bounds.map(rect => rect.right));
+  title.style.setProperty("--hero-title-center", `${(left + right) / 2 - art.getBoundingClientRect().left}px`);
+}
+
+centerHeroTitle();
+document.fonts?.ready.then(centerHeroTitle);
+window.addEventListener("resize", centerHeroTitle);
+if ("ResizeObserver" in window) {
+  const heroActions = document.querySelector(".hero__actions");
+  if (heroActions) new ResizeObserver(centerHeroTitle).observe(heroActions);
+}
+
 function fitScreenHeadings() {
   screenHeadings.forEach((heading) => {
     heading.style.fontSize = "72px";

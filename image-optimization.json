@@ -1,6 +1,6 @@
 {
-  "before": 73092386,
-  "after": 2474902,
+  "before": 76616961,
+  "after": 3006500,
   "images": [
     {
       "source": "assets/Prez_pict/Frame 68.png",
@@ -81,6 +81,22 @@
       "after": 541340,
       "width": 2200,
       "height": 1556
+    },
+    {
+      "source": "assets/hero_residensBG.png",
+      "target": "assets/optimized/hero-residence-bg.webp",
+      "before": 2626926,
+      "after": 319420,
+      "width": 1492,
+      "height": 1054
+    },
+    {
+      "source": "assets/Novogodnyaya_skazka_Kizili_2-no-bg-preview_carve_photos.png",
+      "target": "assets/optimized/hero-title.webp",
+      "before": 897649,
+      "after": 212178,
+      "width": 1280,
+      "height": 617
     }
   ]
 }

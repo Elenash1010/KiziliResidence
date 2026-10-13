@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;650;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" as="image" href="assets/optimized/hero.webp" />
+    <link rel="preload" as="image" href="assets/optimized/hero-residence-bg.webp" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
@@ -73,8 +73,12 @@
       <section id="top" class="screen hero" aria-labelledby="hero-title">
         <div class="hero__scene" aria-hidden="true"></div>
         <div class="hero__content shell">
-          <h1 id="hero-title">Резиденция <span>Кизили</span></h1>
-          <p class="hero__subtitle">Новогодняя сказка на курорте «ЯРАТОН»</p>
+          <h1 id="hero-title" class="hero__accessible-title">Новогодняя сказка Кизили — Резиденция Кизили</h1>
+          <div class="hero__art">
+            <div class="hero__title-art"><img src="assets/optimized/hero-title.webp" alt="Новогодняя сказка Кизили" fetchpriority="high" width="1280" height="617" decoding="async" /></div>
+            <figure class="hero__kizili"><img src="assets/optimized/kizili.webp" alt="Кизили со звездой приглашает в новогоднюю сказку" fetchpriority="high" width="2000" height="1414" decoding="async" /></figure>
+          </div>
+          <div class="hero__fade" aria-hidden="true"><span></span><span></span><span></span></div>
           <div class="hero__actions">
             <a class="button" href="#family">План семейного визита <span aria-hidden="true">↗</span></a>
             <a class="button" href="#school">Поедем с друзьями <span aria-hidden="true">↗</span></a>
@@ -280,6 +284,7 @@
                 <tr><td>Прокат тюбингов /1 час</td><td>170 ₽</td></tr>
                 <tr><td>Каток<small>(коньки необходимо брать с собой, проката нет)</small></td><td class="family-package__free">Бесплатно</td></tr>
               </tbody></table>
+              <p class="family-package__ticket-note">*Дети до 2-х лет бесплатно</p>
               <div class="family-package__after">
                 <h4>После программы <small>зимние развлечения на выбор:</small></h4>
                 <p><strong>Коньки:</strong> бесплатно, при условии собственного снаряжения.</p>

@@ -9,7 +9,9 @@ const jobs = [
   ['assets/Prez_pict/Frame 74.png', 'residence', 2200],
   ['assets/ForestBG.png', 'forest', 1920],
   ['assets/map.png', 'map', 1000],
-  ['assets/hero-residence.jpg', 'hero', 2200]
+  ['assets/hero-residence.jpg', 'hero', 2200],
+  ['assets/hero_residensBG.png', 'hero-residence-bg', 2200],
+  ['assets/Novogodnyaya_skazka_Kizili_2-no-bg-preview_carve_photos.png', 'hero-title', 1280]
 ];
 let html = await readFile('index.html', 'utf8');
 let css = await readFile('styles.css', 'utf8');

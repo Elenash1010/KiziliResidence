@@ -1,5 +1,5 @@
-import { readFile, writeFile, mkdir, copyFile, stat } from 'node:fs/promises';
-import { dirname } from 'node:path';
+import { readFile, writeFile, mkdir, copyFile, stat, readdir, unlink } from 'node:fs/promises';
+import { dirname, resolve, relative, sep } from 'node:path';
 import { createHash } from 'node:crypto';
 
 await mkdir('dist', { recursive: true });
@@ -9,6 +9,19 @@ const js = await readFile('script.js', 'utf8');
 const hash = text => createHash('sha256').update(text).digest('hex').slice(0, 10);
 let output = html.replace('href="styles.css"', `href="styles.css?v=${hash(css)}"`).replace('src="script.js"', `src="script.js?v=${hash(js)}"`);
 const paths = new Set([...html.matchAll(/(?:src|href)="(assets\/[^"?#]+)"/g), ...css.matchAll(/url\(["']?(assets\/[^"')]+)["']?\)/g)].map(m => m[1]));
+// Remove obsolete generated files only, so previous images never enter a new archive.
+const outputRoot = resolve('dist');
+const expected = new Set(['index.html', 'styles.css', 'script.js', 'robots.txt', '_headers', ...paths]);
+async function removeStaleFiles(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = resolve(directory, entry.name);
+    if (!path.startsWith(outputRoot + sep)) throw Error('Output path escaped dist');
+    if (entry.isSymbolicLink()) throw Error('Symlinks are not allowed in dist');
+    if (entry.isDirectory()) await removeStaleFiles(path);
+    else if (!expected.has(relative(outputRoot, path).split(sep).join('/'))) await unlink(path);
+  }
+}
+await removeStaleFiles(outputRoot);
 for (const path of paths) {
   await mkdir(dirname(`dist/${path}`), { recursive: true });
   await copyFile(path, `dist/${path}`);
