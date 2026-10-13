@@ -1,0 +1,12 @@
+{
+  "name": "kizili-residence",
+  "private": true,
+  "scripts": {
+    "optimize": "node scripts/optimize.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check script.js && node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "sharp": "0.35.4"
+  }
+}

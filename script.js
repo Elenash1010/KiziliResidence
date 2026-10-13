@@ -1,6 +1,6 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const primaryNavigation = document.querySelector("#primary-navigation");
-const mobileMenu = window.matchMedia("(max-width: 780px)");
+const mobileMenu = window.matchMedia("(max-width: 1100px)");
 const compactSchedule = window.matchMedia("(max-width: 560px)");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const scheduleDisclosure = document.querySelector(".visit-schedule-disclosure");
@@ -27,7 +27,18 @@ document.fonts?.ready.then(fitScreenHeadings);
 window.addEventListener("resize", fitScreenHeadings);
 
 if ("ResizeObserver" in window) {
-  const headingWidthObserver = new ResizeObserver(fitScreenHeadings);
+  const headingWidths = new WeakMap();
+  const headingWidthObserver = new ResizeObserver((entries) => {
+    let changed = false;
+    entries.forEach((entry) => {
+      const width = entry.contentRect.width;
+      if (headingWidths.get(entry.target) !== width) {
+        headingWidths.set(entry.target, width);
+        changed = true;
+      }
+    });
+    if (changed) fitScreenHeadings();
+  });
   screenHeadings.forEach((heading) => headingWidthObserver.observe(heading.parentElement));
 }
 

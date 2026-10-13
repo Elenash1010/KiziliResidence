@@ -364,7 +364,7 @@ dl {
 .hero__scene {
   position: absolute;
   inset: 0;
-  background-image: url("assets/hero-residence.jpg");
+  background-image: url("assets/optimized/hero.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -2644,7 +2644,7 @@ body {
 
 .section--quest .quest-portrait {
   isolation: isolate;
-  background: url("assets/ForestBG.png") center / cover no-repeat;
+  background: url("assets/optimized/forest.webp") center / cover no-repeat;
 }
 
 .section--quest .quest-portrait figcaption {
@@ -2771,7 +2771,7 @@ body {
 }
 
 .character-scene {
-  background: url("assets/ForestBG.png") center / cover no-repeat;
+  background: url("assets/optimized/forest.webp") center / cover no-repeat;
   padding-block: 38px 42px;
 }
 
@@ -3276,7 +3276,7 @@ body {
 
 .school-visits__scene {
   padding-block: 32px 70px;
-  background: url("assets/ForestBG.png") center / cover no-repeat;
+  background: url("assets/optimized/forest.webp") center / cover no-repeat;
 }
 
 .school-visits {
@@ -3565,6 +3565,41 @@ body {
   .site-header .brand__name { font-size: 10px; }
   .site-header .brand__divider { display: none; }
   .header-contacts__vk svg { width: 22px; height: 18px; }
+}
+
+@media (min-width: 781px) and (max-width: 1100px) {
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 12px 24px;
+    background: #fff;
+    border-bottom: 1px solid var(--ice-deep);
+  }
+  .site-nav.is-open { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .site-nav__link { padding-block: 12px; }
+  .site-nav__mobile-cta { display: block; padding-block: 12px; color: var(--red); font-weight: 700; }
+  .menu-toggle {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    place-content: center;
+    gap: 6px;
+    border: 1px solid var(--ice-deep);
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+  }
+  .menu-toggle span { width: 16px; height: 2px; background: var(--red); }
+  .header-contacts { margin-left: auto; }
+}
+
+@media (max-width: 360px) {
+  .site-header .brand__wordmark { width: 64px; }
+  .site-header .brand__name { font-size: 9px; }
 }
 
 main .screen h1[id],

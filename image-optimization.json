@@ -1,0 +1,86 @@
+{
+  "before": 73092386,
+  "after": 2474902,
+  "images": [
+    {
+      "source": "assets/Prez_pict/Frame 68.png",
+      "target": "assets/optimized/territory-68.webp",
+      "before": 4443722,
+      "after": 208996,
+      "width": 1400,
+      "height": 990
+    },
+    {
+      "source": "assets/Prez_pict/Frame 69.png",
+      "target": "assets/optimized/territory-69.webp",
+      "before": 5050289,
+      "after": 169238,
+      "width": 1400,
+      "height": 990
+    },
+    {
+      "source": "assets/Prez_pict/Frame 70.png",
+      "target": "assets/optimized/territory-70.webp",
+      "before": 8307756,
+      "after": 316934,
+      "width": 1400,
+      "height": 990
+    },
+    {
+      "source": "assets/Prez_pict/Frame 71.png",
+      "target": "assets/optimized/territory-71.webp",
+      "before": 14322645,
+      "after": 228068,
+      "width": 1400,
+      "height": 990
+    },
+    {
+      "source": "assets/Prez_pict/Frame 72.png",
+      "target": "assets/optimized/quest-heroes.webp",
+      "before": 7500247,
+      "after": 245646,
+      "width": 2200,
+      "height": 1556
+    },
+    {
+      "source": "assets/Prez_pict/Frame 73.png",
+      "target": "assets/optimized/kizili.webp",
+      "before": 6061165,
+      "after": 220126,
+      "width": 2000,
+      "height": 1414
+    },
+    {
+      "source": "assets/Prez_pict/Frame 74.png",
+      "target": "assets/optimized/residence.webp",
+      "before": 15814059,
+      "after": 400128,
+      "width": 2200,
+      "height": 1556
+    },
+    {
+      "source": "assets/ForestBG.png",
+      "target": "assets/optimized/forest.webp",
+      "before": 9183842,
+      "after": 87752,
+      "width": 1920,
+      "height": 1067
+    },
+    {
+      "source": "assets/map.png",
+      "target": "assets/optimized/map.webp",
+      "before": 1629570,
+      "after": 56674,
+      "width": 1000,
+      "height": 364
+    },
+    {
+      "source": "assets/hero-residence.jpg",
+      "target": "assets/optimized/hero.webp",
+      "before": 779091,
+      "after": 541340,
+      "width": 2200,
+      "height": 1556
+    }
+  ]
+}
