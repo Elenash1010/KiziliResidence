@@ -3672,7 +3672,7 @@ main .screen .hero__accessible-title {
   right: calc((100vw - 100%) / -2);
   bottom: -28px;
   left: calc((100vw - 100%) / -2);
-  height: clamp(240px, 34svh, 400px);
+  height: clamp(220px, 31svh, 365px);
   pointer-events: none;
   background: linear-gradient(to bottom, transparent, rgb(246 248 252 / 35%) 40%, rgb(246 248 252 / 85%) 78%, var(--paper));
 }
@@ -3751,7 +3751,7 @@ main .screen .hero__accessible-title {
 }
 
 @media (min-width: 781px) {
-  .hero__kizili img { top: 2%; height: 270%; }
+  .hero__kizili img { top: -1%; height: 270%; }
 }
 
 @media (max-width: 780px) {
