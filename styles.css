@@ -2968,7 +2968,7 @@ body {
 
 @media (max-width: 780px) {
   .character-scene { padding-block: 28px; }
-  .character-logo { top: 0; width: 180px; }
+  .character-logo { display: none; }
   .character-portrait { position: relative; top: auto; bottom: auto; left: auto; width: 100%; height: 420px; }
   .character-panels { width: 100%; margin: 0; }
   .character-name h3 { font-size: 48px; }
@@ -3457,6 +3457,14 @@ body {
   .site-footer .footer-logo-panel { order: -1; min-height: 160px; }
   .site-footer .footer-logo-link img { max-height: 180px; }
   .site-footer .footer-info p { max-width: none; }
+}
+
+@media (max-width: 780px) {
+  .site-footer .footer-logo-link img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
 }
 
 /* Shared call-to-action styling, with compact sizes for navigation. */
