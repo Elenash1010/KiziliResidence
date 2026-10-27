@@ -3435,6 +3435,21 @@ body {
 .site-footer .footer-programs { white-space: nowrap; }
 .site-footer .footer-info p { max-width: 36ch; font-size: 16px; line-height: 1.5; }
 .site-footer .footer-inline-link { width: fit-content; font-weight: 700; font-size: 14px; line-height: 1.35; }
+.site-footer .footer-privacy-link {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  color: #b80510;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-footer .footer-privacy-link:focus-visible {
+  outline: 3px solid #233b59;
+  outline-offset: 4px;
+}
 .site-footer .footer-date { color: rgb(11 15 20 / 64%); font-size: 13px !important; }
 .site-footer .copyright { margin-top: 16px; font-size: 12px; font-weight: 400; line-height: 1.5; }
 .site-footer .footer-logo-panel { display: flex; justify-content: center; align-items: center; min-height: 220px; }
